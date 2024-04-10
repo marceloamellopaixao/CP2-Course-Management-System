@@ -2,9 +2,8 @@
 
 ### API para Gerenciamento de Cursos numa Universidade
 
-- Desenvolver um sistema de gerenciamento de
-cursos para uma universidade. Este sistema deve permitir a administração de cursos,
-alunos, e professores, além de gerenciar as inscrições dos alunos nos cursos.
+- Desenvolver um sistema de gerenciamento de cursos para uma universidade.
+- Este sistema deve permitir a administração de cursos, alunos, e professores, além de gerenciar as inscrições dos alunos nos cursos.
 
 ------------------
 
