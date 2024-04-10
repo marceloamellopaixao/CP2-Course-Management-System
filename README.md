@@ -17,13 +17,15 @@ alunos, e professores, além de gerenciar as inscrições dos alunos nos cursos.
 ------------------
 
 ### Tecnologias utilizadas
+
 - [x] Lombok
 - [x] Spring Dev Tools
 - [x] Spring Data JPA
-- [x] Spring Web 
+- [x] Spring Web
+- [x] Spring HATEOAS
 - [x] H2 Database
 - [x] Bean Validation
-- [x] SpringDoc OpenAPI Starter WebMVC UI 
+- [x] SpringDoc OpenAPI Starter WebMVC UI
 
 ------------------
 
