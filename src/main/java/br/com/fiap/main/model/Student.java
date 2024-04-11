@@ -1,6 +1,6 @@
 package br.com.fiap.main.model;
 
-import br.com.fiap.main.controller.dto.aluno.StudentDTO;
+import br.com.fiap.main.controller.dto.student.StudentDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,14 +16,14 @@ import java.util.List;
 public class Student {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String nome;
+    private String name;
     private String email;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "students", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private List<Course> courses = new ArrayList<>();
 
     public Student(StudentDTO studentDTO) {
-        this.nome = studentDTO.nome();
+        this.name = studentDTO.name();
         this.email = studentDTO.email();
     }
 }

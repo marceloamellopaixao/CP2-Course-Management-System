@@ -1,14 +1,13 @@
 package br.com.fiap.main.model;
 
-import br.com.fiap.main.controller.dto.curso.CourseDTO;
+import br.com.fiap.main.controller.dto.course.CourseDTO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 
 @Entity
 @Data
@@ -17,21 +16,38 @@ import java.util.List;
 public class Course {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String nome;
-    private String descricao;
-    private final LocalDate data_inicio = LocalDate.now();
+    private String name;
+    private String description;
+    private Date initDate;
 
-    @ManyToMany(mappedBy = "cursos", cascade = CascadeType.MERGE)
-    private List<Teacher> professores = new ArrayList<>();
+    @ManyToMany
+    @JoinColumn(name = "teacher_id")
+    @JsonIgnore
+    private Teacher teacher;
 
-    @ManyToMany(mappedBy = "cursos", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
-    private List<Student> students = new ArrayList<>();
+    @ManyToMany
+    @JoinColumn(name = "student_id")
+    @JsonIgnore
+    private Student student;
 
-    @OneToMany(mappedBy = "curso", cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
-    private List<Matter> matters = new ArrayList<>();
+    @OneToMany
+    @JoinColumn(name = "matter_id")
+    @JsonIgnore
+    private Matter matter;
 
     public Course(CourseDTO courseDTO){
-        this.nome = courseDTO.nome();
-        this.descricao = courseDTO.descricao();
+        this.name = courseDTO.name();
+        this.description = courseDTO.description();
+        this.initDate = courseDTO.initDate();
+        this.teacher = new Teacher(courseDTO.teacher());
+        this.student = new Student(courseDTO.student());
+        this.matter = new Matter(courseDTO.matter());
+    }
+
+    // Construtor
+    public Course(String name, String description, Date initDate) {
+        this.name = name;
+        this.description = description;
+        this.initDate = initDate;
     }
 }

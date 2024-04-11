@@ -1,6 +1,6 @@
 package br.com.fiap.main.service;
 
-import br.com.fiap.main.controller.dto.aluno.StudentDTO;
+import br.com.fiap.main.controller.dto.student.StudentDTO;
 import br.com.fiap.main.model.Student;
 import br.com.fiap.main.repository.AlunoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
