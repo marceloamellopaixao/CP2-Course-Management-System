@@ -12,10 +12,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Professor {
+public class Materia {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nome;
-    private String especialidade;
+    private String descricao;
 }
-
