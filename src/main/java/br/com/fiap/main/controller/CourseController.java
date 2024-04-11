@@ -1,4 +1,4 @@
 package br.com.fiap.main.controller;
 
-public class CursoController {
+public class CourseController {
 }

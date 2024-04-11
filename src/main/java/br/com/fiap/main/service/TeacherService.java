@@ -1,4 +1,4 @@
 package br.com.fiap.main.service;
 
-public class ProfessorService {
+public class TeacherService {
 }
