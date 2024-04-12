@@ -1,15 +1,18 @@
 package br.com.fiap.main.controller.dto.registration;
 
+import br.com.fiap.main.model.Course;
+import br.com.fiap.main.model.Registration;
+import br.com.fiap.main.model.Student;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
 
 import java.util.Date;
 
-public record registrationDTO(
+public record RegistrationDTO(
         @NotNull
-        Long courseId,
+        Course courseId,
         @NotNull
-        Long studentId,
+        Student studentId,
         @PastOrPresent
         Date registrationDate
 
