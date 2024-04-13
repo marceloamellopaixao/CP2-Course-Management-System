@@ -5,6 +5,10 @@
 - Desenvolver um sistema de gerenciamento de cursos para uma universidade.
 - Este sistema deve permitir a administração de cursos, alunos, e professores, além de gerenciar as inscrições dos alunos nos cursos.
 
+Documento PDF:
+
+[Checkpoint_2.pdf](https://github.com/marceloamellopaixao/CP2-Course-Management-System/files/14965325/Checkpoint_2.pdf)
+
 ------------------
 
 ### Integrantes
