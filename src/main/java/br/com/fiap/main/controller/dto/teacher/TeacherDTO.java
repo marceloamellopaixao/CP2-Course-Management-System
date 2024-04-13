@@ -9,6 +9,8 @@ import jakarta.validation.constraints.Size;
 import java.util.List;
 
 public record TeacherDTO(
+        @NotNull
+        Long id,
         @NotBlank
         @Size(max = 100)
         String name,
@@ -20,6 +22,6 @@ public record TeacherDTO(
         List<CourseDTO> courses
 ) {
         public TeacherDTO(Teacher teacher){
-                this(teacher.getName(), teacher.getSpecialty(), null);
+                this(teacher.getId(), teacher.getName(), teacher.getSpecialty(), null);
         }
 }

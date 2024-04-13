@@ -16,7 +16,7 @@ public class Matter {
     private String name;
     private String description;
 
-    @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "course_id")
     private Course course;
 

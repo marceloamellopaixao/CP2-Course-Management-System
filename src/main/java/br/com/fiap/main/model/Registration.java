@@ -7,16 +7,16 @@ public class Registration {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-//    @ManyToOne
-//    @JoinColumn(name = "course_id")
-//    private Course course;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "student_id")
-//    private Student student;
+    @ManyToOne
+    @JoinColumn(name = "course_id")
+    private Course course;
 
-//    public Registration(RegistrationDTO registrationDTO){
-//        this.course = registrationDTO.courseId();
-//        this.student = registrationDTO.studentId();
-//    }
+    @ManyToOne
+    @JoinColumn(name = "student_id")
+    private Student student;
+
+    public Registration(RegistrationDTO registrationDTO){
+        this.course = registrationDTO.courseId();
+        this.student = registrationDTO.studentId();
+    }
 }

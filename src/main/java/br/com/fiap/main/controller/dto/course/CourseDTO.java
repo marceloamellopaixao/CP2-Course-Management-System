@@ -10,6 +10,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 import java.util.Date;
+import java.util.List;
 
 public record CourseDTO(
 
@@ -22,13 +23,10 @@ public record CourseDTO(
         @FutureOrPresent
         Date initDate,
 
-        @NotNull @JsonIgnore
-        TeacherDTO teacher,
+        List<TeacherDTO> teacher,
 
-        @NotNull @JsonIgnore
-        StudentDTO student,
+        List<StudentDTO> student,
 
-        @NotNull @JsonIgnore
-        MatterDTO matter
+        List<MatterDTO> matter
 ) {
 }

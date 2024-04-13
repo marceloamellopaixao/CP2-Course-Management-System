@@ -20,7 +20,12 @@ public class Teacher {
     private String name;
     private String specialty;
 
-    @ManyToMany(mappedBy = "teachers", cascade = CascadeType.MERGE)
+    @ManyToMany
+    @JoinTable(
+            name = "teacher_course",
+            joinColumns = @JoinColumn(name = "teacher_id"),
+            inverseJoinColumns = @JoinColumn(name = "course_id")
+    )
     private List<Course> courses = new ArrayList<>();
 
     public Teacher(TeacherDTO teacherDTO){
